@@ -4,10 +4,12 @@ function tap(selector, callback) {
 		callback = callback ? callback : function() {},
 		els
 		
-	if (typeof selector == "string")
+	if (typeof selector == "string") {
 		els = Array.prototype.slice.call(document.querySelectorAll(selector));
-	else if (typeof selector == "object")
+	}
+	else if (typeof selector == "object") {
 		els = [].concat(selector);
+	}
 		
 	els.forEach(function(el, i) {
 		if (touch) {
